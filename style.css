@@ -68,6 +68,7 @@ h1{font-size:42px;line-height:1.05;margin:0 0 12px}
   background:var(--brand);color:var(--ink);
   font-weight:900;
   box-shadow:0 12px 28px rgba(255,220,0,.14);
+  transition: transform .12s ease;
 }
 .btn--ghost{
   background:transparent;
@@ -77,6 +78,15 @@ h1{font-size:42px;line-height:1.05;margin:0 0 12px}
 }
 .btn:hover{transform: translateY(-1px)}
 .btn--ghost:hover{border-color: rgba(255,255,255,.35)}
+
+.mini{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.chip{
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.18);
+  padding:10px 12px;
+  border-radius:14px;
+  color: rgba(255,255,255,.86);
+}
 
 .section{padding:26px 0}
 .section--alt{
@@ -94,18 +104,46 @@ h2{margin:0 0 14px;font-size:24px}
   border-radius:18px;
   padding:16px;
 }
+.card__title{font-weight:900;margin-bottom:10px}
 
-.hero__card .link{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  padding:10px 0;
-  color: rgba(255,255,255,.88);
-  text-decoration:none;
-  border-bottom:1px dashed rgba(255,255,255,.14);
+.contacts{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
 }
-.hero__card .link:last-child{border-bottom:none}
-.hero__card .link:hover{color:#fff}
+.line{margin:8px 0}
+.spacer{height:10px}
+
+.quick{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:10px;
+}
+.pill{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background: rgba(0,0,0,.18);
+  color: rgba(255,255,255,.92);
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+.pill:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.30);
+  background: rgba(0,0,0,.28);
+}
+
+.plain{
+  text-decoration:none;
+  color: rgba(255,255,255,.92);
+  border-bottom: 1px dashed rgba(255,255,255,.18);
+}
+.plain:hover{color:#fff;border-bottom-color: rgba(255,255,255,.35)}
 
 .footer{
   padding:18px 0;
@@ -117,5 +155,6 @@ h2{margin:0 0 14px;font-size:24px}
 @media (max-width: 900px){
   .hero__grid{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
+  .contacts{grid-template-columns:1fr}
   h1{font-size:34px}
 }
